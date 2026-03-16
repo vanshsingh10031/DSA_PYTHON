@@ -8,6 +8,23 @@ class LinkedList:
     def __init__(self):
         self.head = None
 
+    
+    def search(self, key):
+
+        temp = self.head
+        
+        if temp.head == None:
+            print("List is Empty")
+            return
+
+        while temp is not None:
+            if temp.data == key:
+                print("Found")
+                return
+            temp = temp.next    
+
+        print("Not Found")
+
     # Insert at Beginning
     def insert_beginning(self, data):
         new_node = Node(data)
@@ -75,6 +92,7 @@ while True:
     print("2. Insert at End")
     print("3. Display List")
     print("4. Delete At End")
+    print("6. Search for an Element")
     print("5. Exit")
 
     choice = int(input("Enter your choice: "))
@@ -92,6 +110,10 @@ while True:
 
     elif choice == 4:
         ll.Delete_atEnd()
+
+    elif choice == 6:
+        data = int(input("Enter element to search: "))
+        ll.search(data)
 
     elif choice == 5:
         print("Program Ended")
